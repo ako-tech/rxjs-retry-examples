@@ -1,4 +1,4 @@
-import { tap, timer } from "rxjs";
+import { retry, tap, timer } from "rxjs";
 import "./style.css";
 
 const source = timer(0, 1000).pipe(
@@ -12,3 +12,5 @@ const source = timer(0, 1000).pipe(
         error: () => console.log("Se lanza el error"),
     })
 );
+
+source.pipe(retry()).subscribe(console.log);
