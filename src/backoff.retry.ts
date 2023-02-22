@@ -1,9 +1,14 @@
 import { Observable, timer } from "rxjs";
 
-type BackoffDelayFn = (error: any, retryCount: number) => Observable<number>;
+interface BackoffConfig {
+    base: number;
+    retryCount: number;
+}
 
-export function exponentialBackOff(base: number): BackoffDelayFn {
+export function exponentialBackOff({
+    retryCount,
+    base = 2,
+}: BackoffConfig): Observable<number> {
     const factorToMs = 1000;
-    return (_, retryCount) =>
-        timer(Math.pow(base, retryCount - 1) * factorToMs);
+    return timer(Math.pow(base, retryCount - 1) * factorToMs);
 }
