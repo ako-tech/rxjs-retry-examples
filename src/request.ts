@@ -1,4 +1,4 @@
-import { delay, Observable, of, tap, timer } from "rxjs";
+import { delay, finalize, Observable, of, tap, timer } from "rxjs";
 import { NoConnectionError } from "./errors";
 
 interface Response {
@@ -36,5 +36,10 @@ export function getSomething(): Observable<Response> {
 }
 
 export function whenBackOnline(): Observable<any> {
-    return timer(5000).pipe(tap(() => (online = true)));
+    return timer(5000).pipe(
+        tap(() => {
+            online = true;
+            console.log("back online");
+        })
+    );
 }
