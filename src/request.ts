@@ -1,5 +1,5 @@
 import { delay, finalize, Observable, of, tap, timer } from "rxjs";
-import { NoConnectionError } from "./errors";
+import { NoConnectionError, ServiceUnavailableError } from "./errors";
 
 interface Response {
     data: any;
@@ -18,7 +18,7 @@ export function getSomething(): Observable<Response> {
         delay(100),
         tap(() => {
             if (online === false) {
-                throw new NoConnectionError();
+                throw new ServiceUnavailableError();
             }
         }),
         tap({
