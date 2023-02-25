@@ -4,8 +4,8 @@ Repositorio que contiene el código de los ejemplos usados en el [vídeo](https:
 
 Los dos ejemplos principales del video se encuentran en las siguientes ramas:
 
--   [Ejemplo básico](https://github.com/ako-tech/rxjs-retry-examples/tree/timer)
--   [Ejemplo Quiz preguntas y respuestas](https://github.com/ako-tech/rxjs-retry-examples/tree/http-request)
+-   [Ejemplo Básico](https://github.com/ako-tech/rxjs-retry-examples/tree/timer)
+-   [Ejemplo Petición HTTP](https://github.com/ako-tech/rxjs-retry-examples/tree/http-request)
 
 ## Comandos
 
