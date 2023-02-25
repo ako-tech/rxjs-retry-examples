@@ -1,4 +1,4 @@
-import { delay, finalize, Observable, of, tap, timer } from "rxjs";
+import { delay, Observable, of, tap, timer } from "rxjs";
 import { NoConnectionError, ServiceUnavailableError } from "./errors";
 
 interface Response {
